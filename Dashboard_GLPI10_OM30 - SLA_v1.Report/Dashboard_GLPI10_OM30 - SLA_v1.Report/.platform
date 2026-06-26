@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard_GLPI10_OM30 - SLA_v1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "52757c66-7dea-4f3c-bad9-56fc311ee4c5"
+  }
+}
