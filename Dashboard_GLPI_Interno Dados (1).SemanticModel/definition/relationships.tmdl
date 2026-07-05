@@ -1,0 +1,81 @@
+relationship bf101df8-8db6-4029-80e9-b8acf13152c1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.DataAbertura
+	toColumn: LocalDateTable_c08d783a-3bd7-4c73-b804-a315695f9fec.Date
+
+relationship 01292660-87cf-498b-ae97-7548c6306b32
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.DataFechado
+	toColumn: LocalDateTable_cc4b1fd5-75bd-41b9-a882-8182588bf38f.Date
+
+relationship 64b53a6b-defc-4b6b-9ef7-22870b973227
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.DataSolucao
+	toColumn: LocalDateTable_8856121d-e8e5-429f-8889-cf78f0fdb4f1.Date
+
+relationship e91bdd86-cd96-4774-86e8-c03d2214493a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.time_to_resolve
+	toColumn: LocalDateTable_90867ae4-c241-4b9c-a1de-e2f31be66ec8.Date
+
+relationship 43dd4061-a212-4f39-a9df-70465b5f471a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Refresh.Refresh
+	toColumn: LocalDateTable_0a1ff9d0-29f4-489d-9b36-31c2d3fbdab3.Date
+
+relationship f32cc851-5b06-4057-bee2-a1fb848912ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Refresh.Fuso
+	toColumn: LocalDateTable_00605827-97c2-457d-ac0b-26fdad0dec2d.Date
+
+relationship 4e5971f0-dd6e-b631-9eac-8fc746d95779
+	fromColumn: f_base.'chave D_base'
+	toColumn: d_basetempo.'chave D_basetempo'
+
+relationship ee9203ed-7ba6-7a8d-862a-ced2b2ac47c6
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: d_basetempo.tickets_id
+	toColumn: 'd_basetempo reduzido'.tickets_id
+
+relationship 'd_basetempo reduzido_tickets_id_f_base_id'
+	toCardinality: many
+	fromColumn: 'd_basetempo reduzido'.tickets_id
+	toColumn: f_base.id
+
+relationship 1e86fe5a-d459-5ad4-2313-19b5197d5b4f
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: f_base.id
+	toColumn: d_status_om30.id
+
+relationship 83ec19b0-9474-4080-803c-f9c20017a034
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_subtarefa_descr.date
+	toColumn: LocalDateTable_68ca0242-2224-4cde-bc5a-3f359f521d9a.Date
+
+relationship a06c6afd-43f4-4ef0-9e05-53b9f18b3fe7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dCalendário.Date
+	toColumn: LocalDateTable_b45531ba-aff0-405c-95fb-7eb80df83163.Date
+
+relationship 5ce152a9-f9d0-433c-af86-090d8cbf306f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'd_basetempo reduzido'.Data_trabalhada
+	toColumn: LocalDateTable_9ed7f71b-651b-4c5f-af8b-4d0e050c63c9.Date
+
+relationship 9645f38f-e823-d39c-b3b9-7910210072ad
+	fromColumn: 'd_basetempo reduzido'.'Data_trabalhada (data)'
+	toColumn: dCalendário.Date
+
+relationship a98e9ec5-512f-40ea-b3ea-0d4da57a073f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dados atualizacao'.Fuso
+	toColumn: LocalDateTable_827a64ff-23dc-4f4f-bfe4-486456df9966.Date
+
+relationship 15706e6a-a806-4d54-8950-042bfac2bdd3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.DataAtualizacao
+	toColumn: LocalDateTable_74493bf8-60df-4c99-b89f-29d3619707a9.Date
+

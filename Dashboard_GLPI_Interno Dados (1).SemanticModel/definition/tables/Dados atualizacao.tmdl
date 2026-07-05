@@ -1,0 +1,39 @@
+table 'Dados atualizacao'
+	lineageTag: 7d2a8165-f049-417b-888b-9beaa7a870fe
+
+	column Column1
+		dataType: string
+		lineageTag: 3cbe2e97-5f1a-4a8c-9120-71a216539e0f
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fuso = 'Dados atualizacao'[Column1]-3/24
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9938d9cc-b201-4a40-83e0-3f444bd2ee9f
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: a98e9ec5-512f-40ea-b3ea-0d4da57a073f
+			defaultHierarchy: LocalDateTable_827a64ff-23dc-4f4f-bfe4-486456df9966.'Hierarquia de datas'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dados atualizacao' = m
+		mode: import
+		source =
+				let
+				    Fonte = DateTime.LocalNow(),
+				    #"Convertido para Tabela" = #table(1, {{Fonte}})
+				in
+				    #"Convertido para Tabela"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

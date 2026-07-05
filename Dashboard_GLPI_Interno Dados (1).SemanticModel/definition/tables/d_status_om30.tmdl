@@ -1,0 +1,41 @@
+table d_status_om30
+	lineageTag: 98d0cc7f-1ce2-429b-8d0c-8c2f9f7addc2
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b37da47-2545-43ac-b1f2-1f5341695a5c
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 3d90b0fd-af20-4331-b58c-6ce2f6f93ae6
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column statusX
+		dataType: string
+		lineageTag: d76e3cb4-5469-4b4b-9ca1-b908432fd299
+		summarizeBy: none
+		sourceColumn: statusX
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_status_om30 = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("10.20.16.61", "glpi", [ReturnSingleDatabase=true, Query="SELECT #(lf)    t.id,#(lf)    t.name,#(lf)    d.name AS statusX#(lf)FROM glpi_tickets t#(lf)#(lf)LEFT JOIN glpi_plugin_fields_ticketcampospersonalizados s#(lf)    ON s.items_id = t.id#(lf)    AND s.itemtype = 'Ticket'#(lf)#(lf)LEFT JOIN glpi_plugin_fields_statusomthreezerofielddropdowns d#(lf)    ON d.id = s.plugin_fields_statusomthreezerofielddropdowns_id"]),
+				    #"Linhas Filtradas1" = Table.SelectRows(Fonte, each true)
+				in
+				    #"Linhas Filtradas1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

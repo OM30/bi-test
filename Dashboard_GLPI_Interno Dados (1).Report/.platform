@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard_GLPI_Interno Dados (1)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e5f5e0a3-c63a-4681-8a24-e3febc4ee734"
+  }
+}

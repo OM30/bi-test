@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "33190f8c8093e20ce045",
+  "displayName": "Indicadores de horas-Dica",
+  "displayOption": "ActualSize",
+  "height": 240,
+  "width": 510,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "68313ea0d1211d45317a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_basetempo reduzido"
+              }
+            },
+            "Property": "tecnico firstname"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "dfa9deb29ee1462dc0d0",
+    "type": "Tooltip",
+    "parameters": [
+      {
+        "name": "ac6feb09270eda03e655",
+        "boundFilter": "68313ea0d1211d45317a",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_basetempo reduzido"
+              }
+            },
+            "Property": "tecnico firstname"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1F1F1'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

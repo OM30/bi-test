@@ -1,0 +1,3678 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "d17c7d28a793a730ec22",
+  "position": {
+    "x": 30.573683088078482,
+    "y": 218.383450629132,
+    "z": 2000,
+    "height": 484.81126039667305,
+    "width": 1214.211985497974,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_base"
+                    }
+                  },
+                  "Property": "Inner tarefa"
+                }
+              },
+              "queryRef": "f_base.Inner tarefa",
+              "nativeQueryRef": "Task",
+              "active": true,
+              "displayName": "Task"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_basetempo reduzido"
+                    }
+                  },
+                  "Property": "tecnico"
+                }
+              },
+              "queryRef": "d_basetempo reduzido.tecnico",
+              "nativeQueryRef": "tecnico",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_basetempo reduzido"
+                    }
+                  },
+                  "Property": "Data_trabalhada"
+                }
+              },
+              "queryRef": "d_basetempo reduzido.Data_trabalhada",
+              "nativeQueryRef": "Data_trabalhada",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_basetempo reduzido"
+                    }
+                  },
+                  "Property": "descricao_tarefa"
+                }
+              },
+              "queryRef": "d_basetempo reduzido.descricao_tarefa",
+              "nativeQueryRef": "descricao_tarefa",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_status_om30"
+                        }
+                      },
+                      "Property": "statusX"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Min(d_status_om30.statusX)",
+              "nativeQueryRef": "Status OM30",
+              "displayName": "Status OM30"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_base"
+                        }
+                      },
+                      "Property": "DataAtualizacao"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Min(f_base.DataAtualizacao)",
+              "nativeQueryRef": "Última atualização",
+              "displayName": "Última atualização"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "#medidas"
+                    }
+                  },
+                  "Property": "HorasPorTecnico"
+                }
+              },
+              "queryRef": "#medidas.HorasPorTecnico",
+              "nativeQueryRef": "HorasPorTecnico"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "#medidas"
+                    }
+                  },
+                  "Property": "TotalHorasLancadas"
+                }
+              },
+              "queryRef": "#medidas.TotalHorasLancadas",
+              "nativeQueryRef": "Horas lançadas",
+              "displayName": "Horas lançadas"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_base"
+                  }
+                },
+                "Property": "Inner tarefa"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_basetempo reduzido"
+                  }
+                },
+                "Property": "tecnico"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "f_base.Inner tarefa"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_base"
+                    }
+                  },
+                  "Property": "Inner tarefa"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_basetempo reduzido.tecnico"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_basetempo reduzido"
+                    }
+                  },
+                  "Property": "tecnico"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_basetempo reduzido.Data_trabalhada"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_basetempo reduzido"
+                    }
+                  },
+                  "Property": "Data_trabalhada"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_basetempo reduzido.descricao_tarefa"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#184D91'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bandedRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "48D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_base.DataSolucao.Variation.Hierarquia de datas.Ano"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_base.DataSolucao.Variation.Hierarquia de datas.Trimestre"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_base.DataSolucao.Variation.Hierarquia de datas.Mês"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "40D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_base.DataSolucao.Variation.Hierarquia de datas.Dia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "48D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo_reduzido.date.Variation.Hierarquia de datas.Ano"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo_reduzido.date.Variation.Hierarquia de datas.Trimestre"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo_reduzido.date.Variation.Hierarquia de datas.Mês"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "40D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo_reduzido.date.Variation.Hierarquia de datas.Dia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "669D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Inner tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'129145- [Jales] Saúde Simples - PBI-1039 - [JALES] - Relatório de Produção'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_base"
+                        }
+                      },
+                      "Property": "Inner tarefa"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Atribuído'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.05649398251929D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_base"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "48D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.date.Variation.Hierarquia de datas.Ano"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.date.Variation.Hierarquia de datas.Trimestre"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.date.Variation.Hierarquia de datas.Mês"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "41D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.date.Variation.Hierarquia de datas.Dia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "48D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_Trabalhada2.Variation.Hierarquia de datas.Ano"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_Trabalhada2.Variation.Hierarquia de datas.Trimestre"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_Trabalhada2.Variation.Hierarquia de datas.Mês"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "40D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_Trabalhada2.Variation.Hierarquia de datas.Dia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "48D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_trabalhada.Variation.Hierarquia de datas.Ano"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_trabalhada.Variation.Hierarquia de datas.Trimestre"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_trabalhada.Variation.Hierarquia de datas.Mês"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "40D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_trabalhada.Variation.Hierarquia de datas.Dia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo reduzido"
+                          }
+                        },
+                        "Property": "tempo_trabalhado_em_horas"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "0.75D"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo reduzido"
+                          }
+                        },
+                        "Property": "tempo_trabalhado_em_horas"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "1.5D"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo reduzido"
+                          }
+                        },
+                        "Property": "tempo_trabalhado_em_horas"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2D"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo reduzido"
+                          }
+                        },
+                        "Property": "tempo_trabalhado_em_horas"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "4D"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo reduzido"
+                          }
+                        },
+                        "Property": "tempo_trabalhado_em_horas"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "5D"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo reduzido"
+                          }
+                        },
+                        "Property": "tempo_trabalhado_em_horas"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "6D"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_basetempo reduzido"
+                        }
+                      },
+                      "Property": "tempo_trabalhado_em_horas"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tickets_id"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "129145L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_basetempo"
+                        }
+                      },
+                      "Property": "tickets_id"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Tenico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Jose Silva'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "258D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Tenico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Sandra de Freitas Della Valle'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Adriana Freitas'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "137D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Alípio Oliveira'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "148D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Andrei Stefanin'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "127D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Augusto Reis'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "145D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Bianca Barbosa'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "137D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Bruna Barroso'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Bruno Cunha'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "135D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Caio Camargo'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "267D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Central de Serviços Educação'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "226D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Central de Serviços Paço'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "170D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Debora Rodrigues'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "138D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Evelen Bianchi'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Felipe Silva'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "162D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Fernanda Canuto'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "163D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Fernanda Ignacio'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Flavio Sega'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "158D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Gabriela Martins'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "249D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Guilherme  Gobato Barbosa'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "209D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Gustavo Emilio Pereira'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "146D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_basetempo"
+                          }
+                        },
+                        "Property": "tecnico"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Gustavo Leonel'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "156D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.Data_trabalhada"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.2531172238599D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Fechado'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "59D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Novo'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pendente'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "186D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Atribuído'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "186D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Fechado'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "186D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Novo'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "186D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_base"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pendente'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "185D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_base"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  }
+                ]
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "745D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'[Guaruja] Analise Query - Relatório Estatisticas de Atendimentos PA - Tempo de Atendimento'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "349D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'[Hortolandia] Configuração Modelo Semantico'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "286D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'[Jales] Ajustes BI de estudantes PBI-856'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "427D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Atualização e configuração power bi online Hortolandia'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1014D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ciência de Dados | PBI-884 [Hortolândia] Réplica Relatório Painel de Monitoramento Central de Regulação e Atendimentos'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "220D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ciência de Dados | Solicitação BI'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "977D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ciência de Dados | Solicitação BI [Barra Funda] Saúde Simples - PBI-1030 - [OM30] BI - Atendimentos Não Finalizados'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ciência de Dados | Solicitação BI [Barra Funda] Saúde Simples - PBI-414 - [OM30] BI - Vacinas aplicadas - Inclusão da informação \"Registro Anterior\"'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "993D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ciência de Dados | Solicitação BI [Barra Funda] Saúde Simples - PBI-758 - [CONSULTORIA] BI - Mapa - Visitas Domiciliares'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1120D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_status_om30"
+                          }
+                        },
+                        "Property": "name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ciência de Dados | Solicitação BI [Barra Funda] Saúde Simples - PBI-759 - [CONSULTORIA] BI - Atenção Primária &#62; Agente Comunitário de Saúde &#62; Registro das atividades'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "201D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;div class=\"flex flex-col text-sm pb-25\"&#62;\r\n&#60;article class=\"text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&#38;amp;:has([data-writing-block])&#38;gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" tabindex=\"-1\" data-turn-id=\"5efd4edc-557d-4b54-b98c-fddcdba27cc5\" data-testid=\"conversation-turn-2\" data-scroll-anchor=\"true\" data-turn=\"assistant\"&#62;\r\n&#60;div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] @w-sm/main:[--thread-content-margin:--spacing(6)] @w-lg/main:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\"&#62;\r\n&#60;div class=\"[--thread-content-max-width:40rem] @w-lg/main:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\" tabindex=\"-1\"&#62;\r\n&#60;div class=\"flex max-w-full flex-col grow\"&#62;\r\n&#60;div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&#38;amp;]:mt-1\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"96332e3d-c5b3-45ff-93a5-665b25077058\" data-message-model-slug=\"gpt-5-2\"&#62;\r\n&#60;div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\"&#62;\r\n&#60;div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\"&#62;\r\n&#60;p data-start=\"18\" data-end=\"102\" data-is-last-node=\"\" data-is-only-node=\"\"&#62;Boa tarde, a tarefa foi duplicada. A solicitação será tratada através da tarefa: https://suporte.om30.cloud/front/ticket.form.php?id=127544&#60;/p&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/article&#62;\r\n&#60;/div&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;div class=\"flex flex-col text-sm pb-25\"&#62;\r\n&#60;article class=\"text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&#38;amp;:has([data-writing-block])&#38;gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" tabindex=\"-1\" data-turn-id=\"5efd4edc-557d-4b54-b98c-fddcdba27cc5\" data-testid=\"conversation-turn-2\" data-scroll-anchor=\"true\" data-turn=\"assistant\"&#62;\r\n&#60;div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] @w-sm/main:[--thread-content-margin:--spacing(6)] @w-lg/main:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\"&#62;\r\n&#60;div class=\"[--thread-content-max-width:40rem] @w-lg/main:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\" tabindex=\"-1\"&#62;\r\n&#60;div class=\"flex max-w-full flex-col grow\"&#62;\r\n&#60;div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&#38;amp;]:mt-1\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"96332e3d-c5b3-45ff-93a5-665b25077058\" data-message-model-slug=\"gpt-5-2\"&#62;\r\n&#60;div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\"&#62;\r\n&#60;div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\"&#62;\r\n&#60;p data-start=\"18\" data-end=\"102\" data-is-last-node=\"\" data-is-only-node=\"\"&#62;Boa tarde, a tarefa foi duplicada. A solicitação será tratada através da tarefa: https://suporte.om30.cloud/front/ticket.form.php?id=127544&#60;/p&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/div&#62;\r\n&#60;/article&#62;\r\n&#60;/div&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;--- objetivo deletar funcionalidade_368 &#60;br&#62;--- passar ferramentas_menus -&#38;gt; funcionalidade_id = 368 para funcionalidade_id = 366&#60;/p&#62;\r\n&#60;p&#62;Feita deleção favor validar &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;--- objetivo deletar funcionalidade_368 &#60;br&#62;--- passar ferramentas_menus -&#38;gt; funcionalidade_id = 368 para funcionalidade_id = 366&#60;/p&#62;\r\n&#60;p&#62;Feita deleção favor validar &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/86adt4wd4\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/86adt4wd4&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/86adt4wd4\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/86adt4wd4&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/86ae0rmn9\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/86ae0rmn9&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/86ae0rmn9\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/86ae0rmn9&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-2461\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-2461&#60;/a&#62; - Tarefa para verificação. &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-2461\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-2461&#60;/a&#62; - Tarefa para verificação. &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-3378\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-3378&#60;/a&#62; - Tarefa para análise. &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-3378\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-3378&#60;/a&#62; - Tarefa para análise. &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-3726\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-3726&#60;/a&#62; - Análise e correção. &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-3726\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-3726&#60;/a&#62; - Análise e correção. &#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-3726\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-3726&#60;/a&#62; - Análise e Correção.&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-3726\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-3726&#60;/a&#62; - Análise e Correção.&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-4152\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-4152&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-4152\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-4152&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-4547\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-4547&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_subtarefa_descr"
+                          }
+                        },
+                        "Property": "descricao_tarefa"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'&#60;p&#62;&#60;a href=\"https://app.clickup.com/t/9007055487/OM30-4547\" target=\"_blank\" rel=\"noopener\"&#62;https://app.clickup.com/t/9007055487/OM30-4547&#60;/a&#62;&#60;/p&#62;'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "#medidas.TotalHorasLancadas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "669.2251561399813D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_base.Inner tarefa"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "172.91559689893174D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(f_base.DataAtualizacao)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "148D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "#medidas.HorasPorTecnico"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "194D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_basetempo reduzido.tecnico"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(f_base.DataAtualizacao)"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(d_status_om30.statusX)"
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fb5695231a7bb8522ead",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_basetempo"
+              }
+            },
+            "Property": "tickets_id"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "124dac1979a1192ade57",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_basetempo"
+              }
+            },
+            "Property": "tecnico"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_basetempo",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "tecnico"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

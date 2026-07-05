@@ -1,0 +1,46 @@
+table d_subtarefa_descr
+	lineageTag: d9fdaee6-11f0-445b-b17c-03ef1657aacc
+
+	column tickets_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e2d9da1-24b1-4176-a032-499465feed38
+		summarizeBy: sum
+		sourceColumn: tickets_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b2c5c849-823a-43ee-a69c-49dddb7c0a48
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 83ec19b0-9474-4080-803c-f9c20017a034
+			defaultHierarchy: LocalDateTable_68ca0242-2224-4cde-bc5a-3f359f521d9a.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column descricao_limpa
+		dataType: string
+		lineageTag: 6cc37b2b-c596-4801-8c55-7ddf3dbe91d3
+		summarizeBy: none
+		sourceColumn: descricao_limpa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_subtarefa_descr = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("10.20.16.61", "glpi", [ReturnSingleDatabase=true, Query="SELECT #(lf)    tt.tickets_id,#(lf)    tt.date,#(lf)#(lf)    REGEXP_REPLACE(#(lf)        REPLACE(#(lf)            REPLACE(#(lf)                REPLACE(#(lf)                    REPLACE(tt.content,#(lf)                        '&#60;', '<'),#(lf)                    '&#62;', '>'),#(lf)                '&lt;', '<'),#(lf)            '&gt;', '>'),#(lf)        '<[^>]*>',#(lf)        ''#(lf)    ) AS descricao_limpa#(lf)#(lf)FROM glpi_tickettasks tt"])
+				in
+				    Fonte
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

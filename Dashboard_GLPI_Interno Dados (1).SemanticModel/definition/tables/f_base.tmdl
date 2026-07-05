@@ -1,0 +1,292 @@
+table f_base
+	lineageTag: d748df58-ffd8-48fb-bae4-f774f719dc5d
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: da3c00af-e153-45a8-ade6-8af5b656d689
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = User
+
+	column Entidade
+		dataType: string
+		lineageTag: 97b6da97-af2e-4c1b-a4f7-4595d90441f3
+		summarizeBy: none
+		sourceColumn: Entidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Titulo
+		dataType: string
+		lineageTag: 22ed7741-28ab-49c0-8643-76598f9d6253
+		summarizeBy: none
+		sourceColumn: Titulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataAbertura
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0de5e236-7066-4828-8f6d-63d3e9560f6a
+		summarizeBy: none
+		sourceColumn: DataAbertura
+
+		variation Variation
+			isDefault
+			relationship: bf101df8-8db6-4029-80e9-b8acf13152c1
+			defaultHierarchy: LocalDateTable_c08d783a-3bd7-4c73-b804-a315695f9fec.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataFechado
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 96c13e24-2a03-47e3-b6ca-90f0deb4306b
+		summarizeBy: none
+		sourceColumn: DataFechado
+
+		variation Variation
+			isDefault
+			relationship: 01292660-87cf-498b-ae97-7548c6306b32
+			defaultHierarchy: LocalDateTable_cc4b1fd5-75bd-41b9-a882-8182588bf38f.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataSolucao
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ac945c98-fd8d-4742-a630-5d1f567f7518
+		summarizeBy: none
+		sourceColumn: DataSolucao
+
+		variation Variation
+			isDefault
+			relationship: 64b53a6b-defc-4b6b-9ef7-22870b973227
+			defaultHierarchy: LocalDateTable_8856121d-e8e5-429f-8889-cf78f0fdb4f1.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Slasolucao
+		dataType: double
+		lineageTag: 1f65e4bf-9c57-42b6-bf5d-4695a3695977
+		summarizeBy: sum
+		sourceColumn: Slasolucao
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TempoAcao
+		dataType: double
+		formatString: 0
+		lineageTag: 4a0f7dda-06fb-4f50-8c9d-eb405858dc7d
+		summarizeBy: sum
+		sourceColumn: TempoAcao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Autor
+		dataType: string
+		lineageTag: 3f0a419c-ea6f-436e-bb4b-345d20051862
+		summarizeBy: none
+		sourceColumn: Autor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: f1312a17-1ee5-4ae5-ad09-adf4939448e5
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column NotaSatisfacao
+		dataType: int64
+		formatString: 0
+		lineageTag: f3e6ded1-95ca-490d-8b4a-3115556b4214
+		summarizeBy: sum
+		sourceColumn: NotaSatisfacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		dataType: string
+		lineageTag: 979150c9-171e-44f0-b4f9-feda892c4f0c
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		lineageTag: bf5739e1-d782-43c2-bf1f-0284f4aa99ee
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_to_resolve
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f9ddd132-3496-418c-85e3-e998bacc7252
+		summarizeBy: none
+		sourceColumn: time_to_resolve
+
+		variation Variation
+			isDefault
+			relationship: e91bdd86-cd96-4774-86e8-c03d2214493a
+			defaultHierarchy: LocalDateTable_90867ae4-c241-4b9c-a1de-e2f31be66ec8.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusSla
+		dataType: string
+		lineageTag: aeb48c15-cce0-43b6-8b31-941bd93300d0
+		summarizeBy: none
+		sourceColumn: StatusSla
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupo_tecnico
+		dataType: string
+		lineageTag: 1086c2d8-8ccf-42d6-88ec-d5baf94cc2e2
+		summarizeBy: none
+		sourceColumn: Grupo_tecnico
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origem
+		dataType: string
+		lineageTag: 35f455b8-f40e-4605-aab1-b2e7e008f400
+		summarizeBy: none
+		sourceColumn: Origem
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tenico
+		dataType: string
+		lineageTag: 00591f1d-33f8-485d-85c0-290057cba21c
+		summarizeBy: none
+		sourceColumn: Tenico
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'd_basetempo.tecnico'
+		dataType: string
+		lineageTag: c5617ff5-9d10-4f4e-99bf-19cceffc6b71
+		summarizeBy: none
+		sourceColumn: d_basetempo.tecnico
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'd_basetempo.Entidade'
+		dataType: string
+		lineageTag: 64a3aeb8-1576-412d-9410-b2910fb04574
+		summarizeBy: none
+		sourceColumn: d_basetempo.Entidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'd_basetempo.tempo_trabalhado_em_horas'
+		dataType: double
+		lineageTag: ec6aeaa6-9226-4024-9a95-aa2abb7f69d7
+		summarizeBy: none
+		sourceColumn: d_basetempo.tempo_trabalhado_em_horas
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Satisfacao_Geral
+		dataType: string
+		lineageTag: 3dc87ee4-e5f0-4ef3-a420-5ac7b47e7ea5
+		summarizeBy: none
+		sourceColumn: Satisfacao_Geral
+
+		annotation SummarizationSetBy = Automatic
+
+	column TempoSolucao = DATEDIFF(f_base[DataAbertura], f_base[DataSolucao],DAY)
+		formatString: 0
+		lineageTag: a0784fc4-90d7-4e69-87ac-07f1ff5341bf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Faixa SLA' =
+			
+			SWITCH(
+			    TRUE(), f_base[TempoSolucao] <= 4, "1-4",
+			    f_base[TempoSolucao] <= 10, "5-10",
+			    f_base[TempoSolucao] >= 11, "+11"
+			)
+		lineageTag: 97bf9fb9-d2c4-4c78-a8ae-9974add41e5b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inner tarefa' = f_base[id] & "-" & f_base[Titulo]
+		lineageTag: 13629aae-a357-442f-858a-f942bdb1aab9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'chave D_base' = f_base[id]&f_base[Tenico]
+		lineageTag: f41e17a5-9108-4a16-a9c8-55d3dd3a9d0c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column atribuido
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8542036f-351d-4ff6-86a7-ded3e1833046
+		summarizeBy: none
+		sourceColumn: atribuido
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tecnico-shortname
+		dataType: string
+		lineageTag: 6906e49f-9f1c-4082-9fdb-6056a6b9db25
+		summarizeBy: none
+		sourceColumn: Tecnico-shortname
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataAtualizacao
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: febc877b-56aa-4146-b55a-ab13bffa7ad5
+		summarizeBy: none
+		sourceColumn: DataAtualizacao
+
+		variation Variation
+			isDefault
+			relationship: 15706e6a-a806-4d54-8950-042bfac2bdd3
+			defaultHierarchy: LocalDateTable_74493bf8-60df-4c99-b89f-29d3619707a9.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition f_base = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("10.20.16.61", "glpi", [ReturnSingleDatabase=true, Query="#(lf)SELECT #(lf)    gt.id, gt.date_mod AS DataAtualizacao,#(lf)    ge.name AS Entidade, #(lf)    gt.name AS Titulo, #(lf)    gt.date AS DataAbertura, #(lf)    gt.closedate AS DataFechado, #(lf)    gt.solvedate AS DataSolucao,#(lf)    gt.time_to_resolve,#(lf)    IF(gt.solvedate <= gt.time_to_resolve, 'Dentro do Prazo', 'Fora do Prazo') AS StatusSla,#(lf)    TIMESTAMPDIFF(SECOND, gt.date, gt.solvedate) / 3600 AS Slasolucao,#(lf)    gt2.actiontime/ 3600 AS TempoAcao,#(lf)    gu.name AS Autor,#(lf)    CASE#(lf)        WHEN gt.status = 1 THEN 'Novo'#(lf)        WHEN gt.status = 2 THEN 'Atribuído'#(lf)        WHEN gt.status = 3 THEN 'Planejado'#(lf)        WHEN gt.status = 4 THEN 'Pendente'#(lf)        WHEN gt.status = 5 THEN 'Solucionado'#(lf)        WHEN gt.status = 6 THEN 'Fechado'#(lf)    END AS Status,#(lf)    ts.satisfaction AS NotaSatisfacao,#(lf)    CASE#(lf)        WHEN ts.satisfaction = 1 THEN 'Totalmente Desapontado'#(lf)        WHEN ts.satisfaction = 2 THEN 'Parcialmente Desapontado'#(lf)        WHEN ts.satisfaction = 3 THEN 'Razoável'#(lf)        WHEN ts.satisfaction = 4 THEN 'Contente'#(lf)        WHEN ts.satisfaction = 5 THEN 'Plenamente satisfeito'#(lf)    END AS Satisfacao_Geral,#(lf)    CASE#(lf)        WHEN gt.type = 1 THEN 'Incidente'#(lf)        WHEN gt.type = 2 THEN 'Requisição'#(lf)    END AS Tipo,#(lf)    gi.name AS Categoria,#(lf)    CONCAT(gu3.firstname, ' ', gu3.realname) AS Tenico,#(lf)    gr.completename AS Grupo_tecnico,#(lf)    orig.name AS Origem,#(lf)#(lf)    CASE #(lf)        WHEN EXISTS (#(lf)            SELECT 1#(lf)            FROM glpi_tickets_users tu#(lf)            WHERE tu.tickets_id = gt.id#(lf)              AND tu.type = 3#(lf)        ) THEN 1#(lf)        ELSE 0#(lf)    END AS atribuido#(lf)#(lf)#(lf)FROM glpi_tickets gt#(lf)#(lf)LEFT JOIN glpi_entities ge ON gt.entities_id = ge.id#(lf)LEFT JOIN glpi_tickettasks gt2 ON gt.id = gt2.tickets_id#(lf)LEFT JOIN glpi_ticketsatisfactions ts ON gt.id = ts.tickets_id#(lf)LEFT JOIN glpi_itilcategories gi ON gt.itilcategories_id = gi.id#(lf)LEFT JOIN glpi_users gu ON gt.users_id_recipient = gu.id#(lf)LEFT JOIN glpi_groups_tickets ggt ON gt.id = ggt.tickets_id#(lf)LEFT JOIN glpi_groups gr ON ggt.groups_id = gr.id#(lf)LEFT JOIN glpi_requesttypes orig ON gt.requesttypes_id = orig.id#(lf)LEFT JOIN (#(lf)    SELECT * #(lf)    FROM glpi_tickets_users #(lf)    WHERE type = 2#(lf)) gtu ON gt.id = gtu.tickets_id#(lf)LEFT JOIN glpi_users gu3 ON gtu.users_id = gu3.id#(lf)#(lf)WHERE gt.is_deleted = 0#(lf)GROUP BY #(lf)    gt.id, #(lf)    ge.name, #(lf)    gt.name, #(lf)    gt.date, #(lf)    gt.closedate, #(lf)    gt.solvedate,#(lf)    gt.time_to_resolve,#(lf)    gt2.actiontime,#(lf)    gu.name,#(lf)    gt.status,#(lf)    ts.satisfaction,#(lf)    gt.type,#(lf)    gi.name,#(lf)    gu3.firstname,#(lf)    gu3.realname,#(lf)    gr.completename,#(lf)    orig.name;#(lf)"]),
+				    #"Linhas Classificadas" = Table.Sort(Fonte,{{"id", Order.Descending}}),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Linhas Classificadas", {"id"}, d_basetempo, {"tickets_id"}, "d_basetempo", JoinKind.LeftOuter),
+				    #"d_basetempo Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "d_basetempo", {"tecnico", "Entidade", "tempo_trabalhado_em_horas"}, {"d_basetempo.tecnico", "d_basetempo.Entidade", "d_basetempo.tempo_trabalhado_em_horas"}),
+				    #"Valor Substituído" = Table.ReplaceValue(#"d_basetempo Expandido","Ciência de Dados | Solicitação BI "," ",Replacer.ReplaceText,{"Titulo"}),
+				    #"Linhas Filtradas1" = Table.SelectRows(#"Valor Substituído", each ([Tenico] = "Flavio Sega" or [Tenico] = "Guilherme  Gobato Barbosa" or [Tenico] = "Jose Silva" or [Tenico] = "Sandra de Freitas Della Valle")),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Linhas Filtradas1", "Tecnico-shortname", each if [Tenico] = "Sandra de Freitas Della Valle" then "Sandra Valle" else if [Tenico] = "Guilherme  Gobato Barbosa" then "Guilherme Gobato" else [Tenico], type text)
+				in
+				    #"Coluna Condicional Adicionada"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

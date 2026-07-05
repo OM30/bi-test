@@ -1,0 +1,121 @@
+table 'd_basetempo reduzido'
+	lineageTag: 20df69ab-7ac3-4362-9b6d-34695996761e
+
+	measure HorasSUMX = SUMX('d_basetempo reduzido','d_basetempo reduzido'[tempo_trabalhado_em_horas])
+		lineageTag: 0c094b70-8a0a-4433-8395-5a69abfde467
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tickets_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 52f2ee10-52b1-4ee8-b41d-d19db76c8768
+		summarizeBy: none
+		sourceColumn: tickets_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_trabalhada
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: e212ee4d-e0a3-414a-9610-2718aacb6317
+		summarizeBy: none
+		sourceColumn: Data_trabalhada
+
+		variation Variation
+			isDefault
+			relationship: 5ce152a9-f9d0-433c-af86-090d8cbf306f
+			defaultHierarchy: LocalDateTable_9ed7f71b-651b-4c5f-af8b-4d0e050c63c9.'Hierarquia de datas'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column tecnico
+		dataType: string
+		lineageTag: 7a9f27d1-cb6b-4d03-b267-c5a953ad78b3
+		summarizeBy: none
+		sourceColumn: tecnico
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entidade
+		dataType: string
+		lineageTag: 20f4a7e8-22f9-45e2-ada4-e2178c96147b
+		summarizeBy: none
+		sourceColumn: Entidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column tempo_trabalhado_em_minutos
+		dataType: double
+		lineageTag: fe853226-d92e-4422-8892-9cc9feb17be6
+		summarizeBy: sum
+		sourceColumn: tempo_trabalhado_em_minutos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tempo_trabalhado_em_horas
+		dataType: double
+		lineageTag: 6846358c-bf29-41fe-a05b-0bfd9d36c5e0
+		summarizeBy: sum
+		sourceColumn: tempo_trabalhado_em_horas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column descricao_tarefa
+		dataType: string
+		lineageTag: 60e8b055-56b5-46fa-aa04-0c3170d357ea
+		summarizeBy: none
+		sourceColumn: descricao_tarefa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data_trabalhada (data)'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 6048a511-e732-42bb-b720-d87819c21991
+		summarizeBy: none
+		sourceColumn: Data_trabalhada (data)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'tecnico firstname' =
+			
+			LEFT(
+			    'd_basetempo reduzido'[tecnico],
+			    SEARCH(" ", 'd_basetempo reduzido'[tecnico] & " ") - 1
+			)
+		lineageTag: c8c882ef-c8b6-42d5-83c9-bad976b12540
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'd_basetempo reduzido' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("10.20.16.61", "glpi", [ReturnSingleDatabase=true, Query="SELECT#(lf)    CONCAT(u.firstname, ' ', u.realname) AS tecnico,#(lf)    ge.name as Entidade,#(lf)    tt.tickets_id,#(lf)    tt.date,#(lf)#(lf)    -- descrição tratada#(lf)    REGEXP_REPLACE(#(lf)        REPLACE(#(lf)            REPLACE(#(lf)                REPLACE(#(lf)                    REPLACE(MAX(tt.content),#(lf)                        '&#60;', '<'),#(lf)                    '&#62;', '>'),#(lf)                '&lt;', '<'),#(lf)            '&gt;', '>'),#(lf)        '<[^>]*>',#(lf)        ''#(lf)    ) AS descricao_tarefa,#(lf)#(lf)    SUM(CASE WHEN tt.actiontime > 0 THEN tt.actiontime / 60 ELSE 0 END) AS tempo_trabalhado_em_minutos,#(lf)    SUM(CASE WHEN tt.actiontime > 0 THEN tt.actiontime / 3600 ELSE 0 END) AS tempo_trabalhado_em_horas#(lf)#(lf)FROM glpi_tickettasks tt#(lf)#(lf)JOIN glpi_tickets t #(lf)    ON t.id = tt.tickets_id#(lf)#(lf)LEFT JOIN glpi_entities ge #(lf)    ON t.entities_id = ge.id#(lf)#(lf)JOIN glpi_users u #(lf)    ON u.id = tt.users_id_tech#(lf)#(lf)WHERE tt.state = 2#(lf)#(lf)GROUP BY#(lf)    tt.tickets_id,#(lf)    tt.date,#(lf)    u.firstname,#(lf)    u.realname,#(lf)    ge.name#(lf)#(lf)ORDER BY tempo_trabalhado_em_horas DESC;"]),
+				    #"Colunas Renomeadas" = Table.RenameColumns(Fonte,{{"date", "Data_trabalhada"}}),
+				    #"Linhas Classificadas" = Table.Sort(#"Colunas Renomeadas",{{"Data_trabalhada", Order.Ascending}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Linhas Classificadas", each [Data_trabalhada] > #datetime(2026, 1, 1, 0, 0, 0)),
+				    #"Coluna Duplicada" = Table.DuplicateColumn(#"Linhas Filtradas", "Data_trabalhada", "Data_trabalhada - Copiar"),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Coluna Duplicada",{{"Data_trabalhada - Copiar", "Data_trabalhada (data)"}}),
+				    #"Primeiros caracteres extraídos" = Table.TransformColumns(#"Colunas Renomeadas1", {{"Data_trabalhada (data)", each Text.Start(Text.From(_, "pt-BR"), 10), type text}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Primeiros caracteres extraídos",{{"Data_trabalhada (data)", type date}}),
+				    #"Linhas Filtradas1" = Table.SelectRows(#"Tipo Alterado", each ([tecnico] = "Flavio Sega" or [tecnico] = "Guilherme  Gobato Barbosa" or [tecnico] = "Jose Silva" or [tecnico] = "Sandra de Freitas Della Valle"))
+				in
+				    #"Linhas Filtradas1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

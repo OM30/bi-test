@@ -1,0 +1,67 @@
+table d_basetempo
+	lineageTag: 38576ab4-9eb1-4f8a-ac48-43267d2f915c
+
+	column tecnico
+		dataType: string
+		lineageTag: 48f4f892-50b7-4eb1-a36d-b72d2ccdaa25
+		summarizeBy: none
+		sourceColumn: tecnico
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entidade
+		dataType: string
+		lineageTag: 6d59e540-107b-404a-ae7e-b4fde9032ff1
+		summarizeBy: none
+		sourceColumn: Entidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column tickets_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d9aa2b9c-5a45-4159-b125-5505d6324a91
+		summarizeBy: none
+		sourceColumn: tickets_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tempo_trabalhado_em_minutos
+		dataType: double
+		lineageTag: b8557794-580d-4799-b900-898af44e1988
+		summarizeBy: none
+		sourceColumn: tempo_trabalhado_em_minutos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tempo_trabalhado_em_horas
+		dataType: double
+		lineageTag: 22072ace-0523-49b3-bc0f-80aeaa6c5665
+		summarizeBy: none
+		sourceColumn: tempo_trabalhado_em_horas
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'chave D_basetempo' = d_basetempo[tickets_id]&d_basetempo[tecnico]
+		lineageTag: d1f6209b-d17d-435c-90ef-d357465e5af7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_basetempo = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("10.20.16.61", "glpi", [ReturnSingleDatabase=true, Query="#(lf)SELECT#(lf)    CONCAT(glpi_users.firstname, ' ', glpi_users.realname) AS tecnico,#(lf)    ge.name as Entidade,#(lf)    glpi_tickettasks.tickets_id,#(lf)--    glpi_tickettasks.date,#(lf)    SUM(CASE WHEN glpi_tickettasks.actiontime > 0 THEN glpi_tickettasks.actiontime / 60 ELSE 0 END) AS tempo_trabalhado_em_minutos,#(lf)    SUM(CASE WHEN glpi_tickettasks.actiontime > 0 THEN glpi_tickettasks.actiontime / 3600 ELSE 0 END) AS tempo_trabalhado_em_horas#(lf)FROM#(lf)    glpi_tickettasks#(lf)JOIN#(lf)    glpi_tickets ON glpi_tickets.id = glpi_tickettasks.tickets_id#(lf)LEFT JOIN glpi_entities ge ON glpi_tickets.entities_id = ge.id#(lf)JOIN#(lf)    glpi_users ON glpi_users.id = glpi_tickettasks.users_id_tech#(lf)WHERE glpi_tickettasks.state = 2#(lf)GROUP BY#(lf)    glpi_tickettasks.tickets_id,#(lf)--    glpi_tickettasks.date,#(lf)    glpi_users.firstname,#(lf)    glpi_users.realname,#(lf)    ge.name#(lf)ORDER BY#(lf)    tempo_trabalhado_em_horas DESC;"]),
+				    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([tecnico] = "Flavio Sega" or [tecnico] = "Guilherme  Gobato Barbosa" or [tecnico] = "Jose Silva" or [tecnico] = "Sandra de Freitas Della Valle"))
+				in
+				    #"Linhas Filtradas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
