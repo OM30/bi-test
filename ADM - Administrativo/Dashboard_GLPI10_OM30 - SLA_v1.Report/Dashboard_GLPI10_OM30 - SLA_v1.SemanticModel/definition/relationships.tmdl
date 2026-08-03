@@ -1,0 +1,25 @@
+relationship bf101df8-8db6-4029-80e9-b8acf13152c1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.DataAbertura
+	toColumn: LocalDateTable_c08d783a-3bd7-4c73-b804-a315695f9fec.Date
+
+relationship 01292660-87cf-498b-ae97-7548c6306b32
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.DataFechado
+	toColumn: LocalDateTable_cc4b1fd5-75bd-41b9-a882-8182588bf38f.Date
+
+relationship 64b53a6b-defc-4b6b-9ef7-22870b973227
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.DataSolucao
+	toColumn: LocalDateTable_8856121d-e8e5-429f-8889-cf78f0fdb4f1.Date
+
+relationship e91bdd86-cd96-4774-86e8-c03d2214493a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_base.time_to_resolve
+	toColumn: LocalDateTable_90867ae4-c241-4b9c-a1de-e2f31be66ec8.Date
+
+relationship 43dd4061-a212-4f39-a9df-70465b5f471a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Refresh.Refresh
+	toColumn: LocalDateTable_0a1ff9d0-29f4-489d-9b36-31c2d3fbdab3.Date
+
