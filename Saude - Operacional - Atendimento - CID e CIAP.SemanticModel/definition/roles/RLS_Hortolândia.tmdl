@@ -1,0 +1,15 @@
+role RLS_Hortolândia
+	modelPermission: read
+
+	tablePermission ss_d_municipes = [CLIENT_NAME] = "OM30 - Hortolândia - Produção"
+
+	tablePermission SS_D_CIAP = [CLIENT_NAME] = "OM30 - Hortolândia - Produção"
+
+	tablePermission SS_D_CID = [CLIENT_NAME] = "OM30 - Hortolândia - Produção"
+
+	tablePermission ss_b_atendimento_ciap = [CLIENT_NAME] = "OM30 - Hortolândia - Produção"
+
+	tablePermission ss_f_atendimentos = [CLIENT_NAME] = "OM30 - Hortolândia - Produção"
+
+	annotation PBI_Id = 9c18e519be33421282913aba71e2991d
+

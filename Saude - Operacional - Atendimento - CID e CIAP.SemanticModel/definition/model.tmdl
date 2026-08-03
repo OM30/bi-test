@@ -1,0 +1,48 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Dados atualização","ss_d_municipes","SS_D_CIAP","SS_D_CID","ss_b_atendimento_ciap","ss_f_atendimentos","SS_D_Unidades_saude"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["MCP-PBIModeling","DevMode"]
+
+ref table DateTableTemplate_f2cc0029-8e49-4a60-ae87-c2373b07a0b3
+ref table dCalendário
+ref table 'Dados atualização'
+ref table LocalDateTable_1d914a21-b26c-4b64-9b55-c95e22e39581
+ref table LocalDateTable_bf1e92f2-f030-4fec-b40b-e8a04bc57d06
+ref table LocalDateTable_edb79190-c3eb-4278-a6c6-d59d113f8539
+ref table ss_d_municipes
+ref table LocalDateTable_83094005-a037-4398-a043-9024e627d7de
+ref table LocalDateTable_0aaeef9f-e949-4348-8612-d6650a21ea35
+ref table LocalDateTable_6d8ff7ea-419e-403c-b780-5b6cf0985912
+ref table LocalDateTable_ef76a880-3db3-4cc4-8212-7bb82921b9dd
+ref table Parâmetro
+ref table SS_D_CIAP
+ref table SS_D_CID
+ref table ss_b_atendimento_ciap
+ref table ss_f_atendimentos
+ref table LocalDateTable_5d4d96a9-e3c6-4fa9-86bf-00810039ebad
+ref table LocalDateTable_7a1cb8cd-c358-4000-986d-791ce53106d6
+ref table LocalDateTable_6b58c110-696e-49b3-b48b-41424f819aa4
+ref table LocalDateTable_e2fafd0b-e474-4f30-90dc-c3d51a87f9e5
+ref table LocalDateTable_f61aec4f-8219-495d-8408-dcfc7f8db1f7
+ref table SS_D_Unidades_saude
+ref table LocalDateTable_d055a66c-7a1f-4595-b434-265614e4b08a
+ref table LocalDateTable_89afa4f2-5e53-473f-a50a-93b6ba84826d
+
+ref role RLS_Cotia
+ref role RLS_Jales
+ref role RLS_Guaruja
+ref role RLS_Aruja
+ref role RLS_Caieiras
+ref role RLS_Hortolândia
+
+ref cultureInfo pt-BR
+

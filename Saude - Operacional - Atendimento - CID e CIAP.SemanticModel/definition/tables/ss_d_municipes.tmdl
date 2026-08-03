@@ -1,0 +1,560 @@
+table ss_d_municipes
+	lineageTag: 4a49e67d-62c7-421d-a81d-ee8acf568716
+
+	column CLIENT_NAME
+		dataType: string
+		lineageTag: e7f94907-9416-448a-bc44-873138476beb
+		summarizeBy: none
+		sourceColumn: CLIENT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNS
+		dataType: string
+		lineageTag: f2634f83-109d-4403-803c-4d7e8d5aed10
+		summarizeBy: none
+		sourceColumn: CNS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNS_PROVISORIO
+		dataType: string
+		lineageTag: 491ac47b-8183-45de-8d3e-4c641297fd91
+		summarizeBy: none
+		sourceColumn: CNS_PROVISORIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPF
+		dataType: string
+		lineageTag: f38d6ed9-3abc-43f6-9816-c4aa8c6b3f48
+		summarizeBy: none
+		sourceColumn: CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_NASCIMENTO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8c7495b6-2043-49b4-bd93-ca6ba16bb88e
+		summarizeBy: none
+		sourceColumn: DATA_NASCIMENTO
+
+		variation Variation
+			isDefault
+			relationship: 44664886-f2fe-497a-82ca-603f41bb0022
+			defaultHierarchy: LocalDateTable_83094005-a037-4398-a043-9024e627d7de.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DATA_OBITO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bf8885f0-d589-4edb-b333-35756c8b14f4
+		summarizeBy: none
+		sourceColumn: DATA_OBITO
+
+		variation Variation
+			isDefault
+			relationship: 1643dc0c-bf88-44d6-bdae-e94f13f33255
+			defaultHierarchy: LocalDateTable_0aaeef9f-e949-4348-8612-d6650a21ea35.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DELETED_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cf63309b-33f9-423f-813d-4f552d4bfbcf
+		summarizeBy: none
+		sourceColumn: DELETED_AT
+
+		variation Variation
+			isDefault
+			relationship: 1ff54717-6af1-4e89-84ed-aac7302697c8
+			defaultHierarchy: LocalDateTable_6d8ff7ea-419e-403c-b780-5b6cf0985912.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EQUIPE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 80016d3e-f4ab-4037-bdfe-62f8625580fc
+		summarizeBy: count
+		sourceColumn: EQUIPE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETNIA
+		dataType: string
+		lineageTag: 5065887a-f757-4580-9495-65c5cb2e33f2
+		summarizeBy: none
+		sourceColumn: ETNIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FORA_AREA
+		dataType: string
+		lineageTag: 623c80ba-1f96-4b8e-aaf0-77f536a6f5e9
+		summarizeBy: none
+		sourceColumn: FORA_AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAE_DESCONHECIDA
+		dataType: string
+		lineageTag: 04d93524-7ad3-4aa2-9dd2-42218f9dbcff
+		summarizeBy: none
+		sourceColumn: MAE_DESCONHECIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column MICRO_AREA
+		dataType: int64
+		formatString: 0
+		lineageTag: f1bfb904-58e6-4aad-b3c1-267a9d42600c
+		summarizeBy: sum
+		sourceColumn: MICRO_AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOTIVO_SAIDA_CADASTRO
+		dataType: string
+		lineageTag: 2744570f-388b-463a-a5ba-f339805533a5
+		summarizeBy: none
+		sourceColumn: MOTIVO_SAIDA_CADASTRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOTIVO_SAIDA_CADASTRO_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: d448e17e-a682-4114-b52a-4e904781992f
+		summarizeBy: count
+		sourceColumn: MOTIVO_SAIDA_CADASTRO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPE
+		dataType: string
+		lineageTag: 2f753948-972b-4691-b92d-1dfd65e6f565
+		summarizeBy: none
+		sourceColumn: MUNICIPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 90d0525d-373a-4430-b2ff-245cff9ec652
+		summarizeBy: count
+		sourceColumn: MUNICIPE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPE_IDADE
+		dataType: string
+		lineageTag: 4602008b-618d-4eba-9b33-f55d2ae68cd0
+		summarizeBy: none
+		sourceColumn: MUNICIPE_IDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NACIONALIDADE
+		dataType: string
+		lineageTag: 4f4ef8ba-8ee9-45cf-8b07-edb77b684c65
+		summarizeBy: none
+		sourceColumn: NACIONALIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NACIONALIDADE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c2063da-acb4-49b5-8603-ca9538dcb94d
+		summarizeBy: count
+		sourceColumn: NACIONALIDADE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NASCIMENTO_ESTADO
+		dataType: string
+		lineageTag: 57364e5d-2390-44cd-b156-e9d8f7af5f7f
+		summarizeBy: none
+		sourceColumn: NASCIMENTO_ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NASCIMENTO_ESTADO_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2aa75826-f04e-4407-ab16-b6f5d77b79b9
+		summarizeBy: count
+		sourceColumn: NASCIMENTO_ESTADO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NASCIMENTO_MUNICIPIO
+		dataType: string
+		lineageTag: 6550102b-98b3-4bfd-894d-7f1a62f7e477
+		summarizeBy: none
+		sourceColumn: NASCIMENTO_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NASCIMENTO_MUNICIPIO_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6165d50a-1f5d-4916-8cbd-82373b4a17bd
+		summarizeBy: count
+		sourceColumn: NASCIMENTO_MUNICIPIO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_EQUIPE
+		dataType: string
+		lineageTag: a8e1d2f8-2999-4c41-8670-3fd59c433675
+		summarizeBy: none
+		sourceColumn: NOME_EQUIPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_MAE
+		dataType: string
+		lineageTag: dccbac02-f5e1-4836-bb2e-6f56650de846
+		summarizeBy: none
+		sourceColumn: NOME_MAE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_PAI
+		dataType: string
+		lineageTag: 7afd7507-ed4d-42dc-be4a-ec5d868dd4a4
+		summarizeBy: none
+		sourceColumn: NOME_PAI
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAI_DESCONHECIDO
+		dataType: string
+		lineageTag: 7641f049-cb27-4682-8c23-3fb9ecf5fb57
+		summarizeBy: none
+		sourceColumn: PAI_DESCONHECIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAIS_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: cb8b1e0d-8d4b-414d-9d52-c6d7fe3a9f84
+		summarizeBy: count
+		sourceColumn: PAIS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROFISSIONAL_CADASTRANTE
+		dataType: string
+		lineageTag: da67e81b-e82f-4c00-b665-57a6bc7d6379
+		summarizeBy: none
+		sourceColumn: PROFISSIONAL_CADASTRANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROFISSIONAL_EQUIPE
+		dataType: string
+		lineageTag: 1b99c46f-e362-44f8-86d8-6d610a7a74d6
+		summarizeBy: none
+		sourceColumn: PROFISSIONAL_EQUIPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROFISSIONAL_EQUIPE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d642a9a-eef5-43b7-91ff-3a6904630c61
+		summarizeBy: count
+		sourceColumn: PROFISSIONAL_EQUIPE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RACA_COR_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e9b6b34-ea7b-4fa9-8df3-41c195e0e03b
+		summarizeBy: count
+		sourceColumn: RACA_COR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RACA_COR_NOME
+		dataType: string
+		lineageTag: 07c1df76-f07c-466c-9a3a-a1784398bc82
+		summarizeBy: none
+		sourceColumn: RACA_COR_NOME
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_BAIRRO
+		dataType: string
+		lineageTag: af1004af-df6e-401e-9f49-6ad2e16ecc04
+		summarizeBy: none
+		sourceColumn: RESIDENCIA_BAIRRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_CEP
+		dataType: string
+		lineageTag: e31b88d8-b7f2-4c06-94ee-6916295a0e1c
+		summarizeBy: none
+		sourceColumn: RESIDENCIA_CEP
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_COMPLEMENTO
+		dataType: string
+		lineageTag: 6360bec1-e108-4d41-97c9-8d8518e84eb2
+		summarizeBy: none
+		sourceColumn: RESIDENCIA_COMPLEMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_ESTADO
+		dataType: string
+		lineageTag: b9ad1fcb-db7d-4ed4-a1d4-cd5d03f3e446
+		summarizeBy: none
+		sourceColumn: RESIDENCIA_ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_ESTADO_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 77dee80c-8364-4295-8929-fd977535aacf
+		summarizeBy: count
+		sourceColumn: RESIDENCIA_ESTADO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_LOGRADOURO
+		dataType: string
+		lineageTag: c3e7513c-e45d-40df-9ef2-be81706f3501
+		summarizeBy: none
+		sourceColumn: RESIDENCIA_LOGRADOURO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_MUNICIPIO
+		dataType: string
+		lineageTag: 97a82ca7-b1ea-45f6-95d1-ded8db2a298c
+		summarizeBy: none
+		sourceColumn: RESIDENCIA_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_MUNICIPIO_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 78e7545d-1b19-4563-b6ba-07477ed3be06
+		summarizeBy: count
+		sourceColumn: RESIDENCIA_MUNICIPIO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESIDENCIA_NUMERO
+		dataType: string
+		lineageTag: 3d55d9f0-c1be-4a9e-a7e4-e517692a683d
+		summarizeBy: none
+		sourceColumn: RESIDENCIA_NUMERO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEXO
+		dataType: string
+		lineageTag: 452756ca-3e99-4b66-9fa6-362ff9e366ff
+		summarizeBy: none
+		sourceColumn: SEXO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEXO_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: c1919fe5-6c95-49dd-817f-b9a1191d8862
+		summarizeBy: count
+		sourceColumn: SEXO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE_CELULAR
+		dataType: string
+		lineageTag: bd64a361-f341-4844-8099-7529810c1553
+		summarizeBy: none
+		sourceColumn: TELEFONE_CELULAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE_RESIDENCIAL
+		dataType: string
+		lineageTag: 37fb30b0-c56e-4071-a64e-2d9bbffd9c79
+		summarizeBy: none
+		sourceColumn: TELEFONE_RESIDENCIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_LOGRADOURO
+		dataType: string
+		lineageTag: 6dfa5a51-6fb8-476b-b99f-9cc2bc5af5a5
+		summarizeBy: none
+		sourceColumn: TIPO_LOGRADOURO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_LOGRADOURO_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 69286e8c-14d6-4920-bc86-3a3e720e7a0e
+		summarizeBy: count
+		sourceColumn: TIPO_LOGRADOURO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDADE_SAUDE_REFERENCIA_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: ff857122-5ecb-4cd5-b2ca-0ca3ae0726f5
+		summarizeBy: count
+		sourceColumn: UNIDADE_SAUDE_REFERENCIA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDADES_SAUDE_REFERENCIA
+		dataType: string
+		lineageTag: 97ff0c36-698b-4af6-afc2-ef09133f7e9e
+		summarizeBy: none
+		sourceColumn: UNIDADES_SAUDE_REFERENCIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATED_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69557411-b2b5-4d84-b887-043cbd6ca701
+		summarizeBy: none
+		sourceColumn: UPDATED_AT
+
+		variation Variation
+			isDefault
+			relationship: 0e8bf962-ac26-4956-9e89-262275e64d67
+			defaultHierarchy: LocalDateTable_ef76a880-3db3-4cc4-8212-7bb82921b9dd.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column USUARIO_CADASTRANTE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 28f8e5cd-3447-4b09-be86-621745afd886
+		summarizeBy: count
+		sourceColumn: USUARIO_CADASTRANTE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UUID
+		dataType: string
+		lineageTag: 8bb369fa-1b89-438b-ad68-155ca0f14225
+		summarizeBy: none
+		sourceColumn: UUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALIDACAO_ESUS
+		dataType: int64
+		formatString: 0
+		lineageTag: d733eb91-43e9-4cad-9d42-e5d2590d99b9
+		summarizeBy: sum
+		sourceColumn: VALIDACAO_ESUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIMESTAMP_ORIGIN
+		dataType: string
+		lineageTag: 10a2676f-a628-4155-98cd-b16636589ca3
+		summarizeBy: none
+		sourceColumn: TIMESTAMP_ORIGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILENAME_ORIGIN
+		dataType: string
+		lineageTag: 9998edea-15c7-4f15-a66e-28009c6c5dce
+		summarizeBy: none
+		sourceColumn: FILENAME_ORIGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEXO_CODIGO
+		dataType: string
+		lineageTag: f50be735-f87f-4909-8170-c1da7752af48
+		summarizeBy: none
+		sourceColumn: SEXO_CODIGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		lineageTag: 281cabc5-51ed-42b0-90c1-a4c06fb6e01a
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Chave-PK
+		dataType: string
+		lineageTag: 6b4e519b-1bc0-452c-b0cf-dbfacaf245dc
+		summarizeBy: none
+		sourceColumn: Chave-PK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ENDEREÇO RESIDENCIA'
+		dataType: string
+		lineageTag: 61a670b5-e8f8-4c70-9cc2-25648d655610
+		summarizeBy: none
+		sourceColumn: ENDEREÇO RESIDENCIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNSs = COALESCE(ss_d_municipes[CNS],ss_d_municipes[CNS_PROVISORIO])
+		lineageTag: e52a6c20-ecd2-470c-966f-d15f6bf53103
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ss_d_municipes = m
+		mode: import
+		source = ```
+				let
+				  Origem = PostgreSQL.Database("om30-dl.d4all.com.br:55113", "postgres"),
+				    dlv_saude_prd_ss_d_municipes = Origem{[Schema="dlv_saude_prd",Item="ss_d_municipes"]}[Data],
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(dlv_saude_prd_ss_d_municipes, 
+				   "SEXO_CODIGO",
+				    each if [SEXO_ID] = 2 then "F"
+				    else if [SEXO_ID] = 1 then "M"
+				    else if [SEXO_ID] = null then null
+				    else "Outros",
+				    type text
+				),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Coluna Condicional Adicionada", "Personalizar", each Text.From([CLIENT_NAME])&Text.From([MUNICIPE_ID])),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Personalização Adicionada",{{"Personalizar", "Chave-PK"}}),
+				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Colunas Renomeadas", "Mesclado", each Text.Combine({[RESIDENCIA_LOGRADOURO], ", ", [RESIDENCIA_NUMERO]}), type text),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Coluna Mesclada Inserida",{{"Mesclado", "ENDEREÇO RESIDENCIA"}})
+				in
+				    #"Colunas Renomeadas1"
+				```
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
