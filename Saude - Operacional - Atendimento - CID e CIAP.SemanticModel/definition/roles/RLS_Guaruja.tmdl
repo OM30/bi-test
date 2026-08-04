@@ -1,0 +1,15 @@
+role RLS_Guaruja
+	modelPermission: read
+
+	tablePermission ss_d_municipes = [CLIENT_NAME] = "OM30 - Guarujá - Produção"
+
+	tablePermission SS_D_CIAP = [CLIENT_NAME] = "OM30 - Guarujá - Produção"
+
+	tablePermission SS_D_CID = [CLIENT_NAME] = "OM30 - Guarujá - Produção"
+
+	tablePermission ss_b_atendimento_ciap = [CLIENT_NAME] = "OM30 - Guarujá - Produção"
+
+	tablePermission ss_f_atendimentos = [CLIENT_NAME] = "OM30 - Guarujá - Produção"
+
+	annotation PBI_Id = 39dbb4eb46294755a8424dc586753fd8
+
