@@ -1,0 +1,87 @@
+table #medidas
+	lineageTag: 72b2e2db-bf96-49e3-977d-a7c23b276696
+
+	measure totaltickets = COALESCE(DISTINCTCOUNT(f_base[id]),0)
+		formatString: 0
+		lineageTag: 792297c3-de71-48fe-91a0-2201b4341f89
+
+	measure totaldentroprazo = CALCULATE(DISTINCTCOUNT(f_base[id]),f_base[StatusSla] = "Dentro do Prazo")
+		formatString: 0
+		lineageTag: 91c330a3-c3d1-4100-8115-3f22e1b20eb8
+
+	measure totalforaprazo = CALCULATE(DISTINCTCOUNT(f_base[id]),f_base[StatusSla] = "Fora do Prazo")
+		formatString: 0
+		lineageTag: 8d5a5da0-54fc-4d65-8a49-cb8429d0c723
+
+	measure %dentroprazo = [totaldentroprazo]/[totaltickets]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1656f0a4-ea23-49d3-80db-bfa80dcfe4f6
+
+	measure %foraprazo = [totalforaprazo]/[totaltickets]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 8f4bff92-58dd-451a-a1e9-968506effe86
+
+	measure TotalHorasFormatadoHHMMSS = ```
+			
+			VAR TotalSegundos = [TotalHorasEmSegundos]
+			VAR Horas = INT(TotalSegundos / 3600)
+			VAR Minutos = INT(MOD(TotalSegundos, 3600) / 60)
+			VAR Segundos = MOD(TotalSegundos, 60)
+			RETURN 
+			FORMAT(Horas, "00") &"h" & FORMAT(Minutos, "00") & "min"
+			
+			```
+		lineageTag: 57009915-ffb5-43af-b665-c3b568b69f8c
+
+	measure TotalHorasEmSegundos = ```
+			
+			VAR TotalHorasDecimal = SUM(f_base[d_basetempo.tempo_trabalhado_em_horas])
+			RETURN
+			TotalHorasDecimal * 3600  -- Converte horas decimais para segundos
+			
+			```
+		lineageTag: b3b93998-01f4-4f7a-9da1-6e3bc0372fd7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotalChamadosFechados =
+			
+			CALCULATE(
+			    COUNTROWS(f_base),
+			    FILTER(
+			        f_base,
+			        f_base[Status] = "Fechado"
+			    ))
+		formatString: 0
+		lineageTag: 46b6d40c-4129-4042-9f97-7c352156b1ed
+
+	measure TotalChamadosSolucionados =
+			
+			CALCULATE(
+			    COUNTROWS(f_base),
+			    FILTER(
+			        f_base,
+			        f_base[Status] = "Solucionado"
+			    ))
+		formatString: 0
+		lineageTag: a2445530-b0ea-4349-9fae-7594f2a6bff0
+
+	column 'Coluna 1'
+		dataType: string
+		lineageTag: 70a0a9e5-1cb4-4acd-bcab-6de992ef2ea6
+		summarizeBy: none
+		sourceColumn: Coluna 1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition #medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
