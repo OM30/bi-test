@@ -1,0 +1,64 @@
+table ss_b_atendimento_ciap
+	lineageTag: 9f79ce02-e69a-496e-bcce-256b39e79a33
+
+	column ATENDIMENTO_ID
+		dataType: string
+		lineageTag: 681d5a5d-c1d4-4f9f-b4ad-f485b3f6518d
+		summarizeBy: none
+		sourceColumn: ATENDIMENTO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CIAP_ID
+		dataType: string
+		lineageTag: 4b5f07d9-1d9a-4473-8520-d98a30a53ebb
+		summarizeBy: none
+		sourceColumn: CIAP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLIENT_NAME
+		dataType: string
+		lineageTag: aec930ad-41a8-46c4-9641-bebcde933843
+		summarizeBy: none
+		sourceColumn: CLIENT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIMESTAMP_ORIGIN
+		dataType: string
+		lineageTag: 36deb24c-4c5a-4c2e-bec8-b11cb1424765
+		summarizeBy: none
+		sourceColumn: TIMESTAMP_ORIGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILENAME_ORIGIN
+		dataType: string
+		lineageTag: b0f3ade1-1bd5-4b52-b9de-0c66667e37cd
+		summarizeBy: none
+		sourceColumn: FILENAME_ORIGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column UUID
+		dataType: string
+		lineageTag: 02125093-a660-4a27-8372-4a808f51777a
+		summarizeBy: none
+		sourceColumn: UUID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ss_b_atendimento_ciap = m
+		mode: import
+		source =
+				let
+				  Origem = PostgreSQL.Database("om30-dl.d4all.com.br:55113", "postgres"),
+				    dlv_saude_prd_ss_b_atendimento_ciap = Origem{[Schema="dlv_saude_prd",Item="ss_b_atendimento_ciap"]}[Data]
+				in
+				    dlv_saude_prd_ss_b_atendimento_ciap
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

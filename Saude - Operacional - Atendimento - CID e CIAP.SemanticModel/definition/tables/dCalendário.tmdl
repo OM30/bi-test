@@ -1,0 +1,133 @@
+table dCalendário
+	lineageTag: c2cbf6ba-79bd-46a0-bbf0-51110a46bc4f
+
+	column Date
+		formatString: Short Date
+		lineageTag: 758575d9-998d-4ffa-a93b-29339fcafe1c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: a59e9d15-859f-425b-8e2e-374d57a155d5
+			defaultHierarchy: LocalDateTable_edb79190-c3eb-4278-a6c6-d59d113f8539.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ANO
+		formatString: 0
+		lineageTag: 48b65b91-f35d-44ee-bb61-9cda43bdf722
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [ANO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MÊS
+		lineageTag: 30ea1f1e-5ae1-40b8-a8ad-93dd2bbb0fe8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MÊS]
+		sortByColumn: 'MÊS NUM'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MÊS ABREVIADO'
+		lineageTag: 658a4aab-6137-442f-ac9e-78f552dc1e1c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MÊS ABREVIADO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MÊS NUM'
+		lineageTag: 2145cb03-5a11-425a-ad6f-6c4ef9dbdf19
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MÊS NUM]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIA MÊS'
+		formatString: 0
+		lineageTag: 4192e5ce-6d37-41f5-9614-448b5625f81b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [DIA MÊS]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIA SEMANA'
+		lineageTag: a61542ee-0487-4a3c-a8b0-3603ca91ac31
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DIA SEMANA]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIA SEMANA ABREVIADO'
+		lineageTag: e6cb7483-ad6e-4d3f-881e-fefeb17045da
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DIA SEMANA ABREVIADO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DIA SEMANA NUM'
+		formatString: 0
+		lineageTag: 8511a969-0515-4c31-9f64-9f2f7e546e1b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [DIA SEMANA NUM]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SEMANA ANO NUM'
+		formatString: 0
+		lineageTag: 4dd00d2d-26a6-4368-a622-35edcd445d2a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [SEMANA ANO NUM]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MÊSANO
+		lineageTag: 46c69954-6460-4f4a-b9a5-28ddc0e686ad
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MÊSANO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MÊSANO NUM'
+		lineageTag: 0489be52-5607-4360-966b-ed0f6f533d2b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MÊSANO NUM]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dCalendário-5ea89994-178d-46cd-b233-050560070871 = calculated
+		mode: import
+		source =
+				ADDCOLUMNS(
+				    	CALENDAR(DATE(2022,01,01),TODAY()),
+				        	"ANO", YEAR([Date]),
+				        	"MÊS", UPPER(FORMAT([Date], "mmmm")),
+				        	"MÊS ABREVIADO", UPPER(FORMAT([Date], "mmm")),
+				        	"MÊS NUM", FORMAT([Date], "MM"),
+						    "DIA MÊS", DAY([Date]),
+				        	"DIA SEMANA", UPPER(FORMAT([Date], "DDDD")),
+				        	"DIA SEMANA ABREVIADO", UPPER(FORMAT([Date], "DDD")),
+				        	"DIA SEMANA NUM", WEEKDAY([Date]),
+				        	"SEMANA ANO NUM", WEEKNUM([Date]),
+				        	"MÊSANO", UPPER(FORMAT([Date], "MMM-YYYY")),
+				        	"MÊSANO NUM", UPPER(FORMAT([Date], "YYYYMM")))
+
+	annotation PBI_Id = 8519d3deab6a45339a644e27f40f1ac5
+

@@ -1,0 +1,48 @@
+table Parâmetro
+	lineageTag: 41b7fc7c-e36d-4554-b303-fb7240c5ba9a
+
+	column Parâmetro
+		lineageTag: a75a5754-23d5-44d7-afb1-e894b97f61c5
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parâmetro Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Parâmetro Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro Campos'
+		isHidden
+		lineageTag: 7ae64920-f446-4800-aef4-c7c7ae69a6b8
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parâmetro Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 94a01f44-6bee-4c91-94c7-6a762de15922
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parâmetro = calculated
+		mode: import
+		source =
+				{
+				    ("CIAP", NAMEOF('SS_D_CIAP'[NOME]), 0),
+				    ("CID", NAMEOF('SS_D_CID'[NOME]), 1)
+				}
+
+	annotation PBI_Id = 1264303a6e9948a7a5934e9ff85cb4f8
+
