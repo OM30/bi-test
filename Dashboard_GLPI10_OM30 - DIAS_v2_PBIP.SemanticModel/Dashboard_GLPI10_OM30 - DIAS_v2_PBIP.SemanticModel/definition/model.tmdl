@@ -1,0 +1,28 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["f_base","#medidas","d_basetempo","Refresh"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table f_base
+ref table DateTableTemplate_53781f9a-7ee6-4d22-9cb5-945c6df05316
+ref table LocalDateTable_c08d783a-3bd7-4c73-b804-a315695f9fec
+ref table LocalDateTable_cc4b1fd5-75bd-41b9-a882-8182588bf38f
+ref table LocalDateTable_8856121d-e8e5-429f-8889-cf78f0fdb4f1
+ref table LocalDateTable_90867ae4-c241-4b9c-a1de-e2f31be66ec8
+ref table #medidas
+ref table d_basetempo
+ref table Refresh
+ref table LocalDateTable_0a1ff9d0-29f4-489d-9b36-31c2d3fbdab3
+ref table LocalDateTable_00605827-97c2-457d-ac0b-26fdad0dec2d
+
+ref cultureInfo pt-BR
+

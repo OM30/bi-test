@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard_GLPI10_OM30 - DIAS_v2_PBIP"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2bb448d8-5feb-4595-bc57-4dd6823bc183"
+  }
+}
